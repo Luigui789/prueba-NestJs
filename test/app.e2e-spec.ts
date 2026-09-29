@@ -23,6 +23,12 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 
+  it('/non-existent-route (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/non-existent-route')
+      .expect(404);
+  });
+
   afterEach(async () => {
     await app.close();
   });

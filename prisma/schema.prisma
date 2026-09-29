@@ -27,6 +27,9 @@ enum Role {
 }
 
 model Tenant {
-    id   Int    @id @default(autoincrement())
-    user User[]
+    id        Int      @id @default(autoincrement())
+    name      String   @default("Tenant Principal")
+    createdAt DateTime @default(now())
+    updateAt  DateTime @default(now()) @updatedAt
+    user      User[]
 }
