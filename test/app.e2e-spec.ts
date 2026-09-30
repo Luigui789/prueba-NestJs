@@ -24,9 +24,7 @@ describe('AppController (e2e)', () => {
   });
 
   it('/non-existent-route (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/non-existent-route')
-      .expect(404);
+    return request(app.getHttpServer()).get('/non-existent-route').expect(404);
   });
 
   afterEach(async () => {
